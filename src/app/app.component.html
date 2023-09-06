@@ -1,0 +1,131 @@
+<!-- <h1> ng for directive</h1>
+<!-- <ul>
+    <li *ngFor="let user of users">{{users}}</li>
+</ul> -->
+
+
+<!-- <table class="table">
+    <tr class ="thead-dark">
+        <th>id</th>
+        <th>name</th>
+        <th>city</th>
+
+    </tr>
+    <tr *ngFor = "let user of users; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.city}}</td>
+    </tr>
+</table> --> 
+
+
+<!-- <h1> ng if directive</h1>
+<div *ngIf="isUserLoggedIn; else logout">
+    <h3>welcome</h3>
+
+</div>
+<ng-template #logout>
+    <p>not logged in </p>
+</ng-template> -->
+
+<h1> ngswitch directive</h1>
+Select Country :<select (change)="choice($event.target.value)">
+    <option *ngFor="let c of countries"[value] = "c.code">{{c.country}}</option>
+</select>
+<div [ngSwitch]="selectedcountry">
+    <div *ngSwitchCase="'ind'" class="jumbotron">
+        <h1> india calling code </h1>
+    </div>
+
+    <div *ngSwitchCase="'pak'" class="jumbotron">
+        <h1> india calling code </h1>
+    </div>
+</div>
+
+<!-- parent to child comm -->
+<!-- <app-bindingg [childvar]="parentvar1"></app-bindingg> -->
+
+
+<!-- //child to parent comm -->
+<!-- <p>{{childdata}}</p>
+<app-bindingg (notify)="parentMethod($event)"></app-bindingg> -->
+
+
+<!-- builtin pipes  and age as custom pipes-->
+<!-- <h1 class="text-center"> {{pageTitles | titlecase}}</h1>
+
+<div *ngIf="users.length>0; else nousers">
+<table class="table table-bordered">
+    <tr class ="thead-dark">
+        <th>id</th>
+        <th>name</th>
+        <th>city</th>
+        <th>salary</th>
+        <th>dob</th>
+        <th>age</th>
+
+    </tr>
+    <tr *ngFor = "let user of users">
+      
+        <td>{{user.id}}</td>
+        <td>{{user.name | uppercase}}</td>
+        <td>{{user.city | uppercase}}</td>
+        <td>{{user.salary | currency :"INR":'symbol'}}</td>
+        <td>{{user.dob | date}}</td>
+        <td>{{user.dob | age}}</td>
+
+    </tr>
+</table> 
+</div>
+
+<ng-template #nousers>
+    <p class="alert alert-danger">{{errormessage}}</p>
+
+</ng-template>
+ -->
+
+<!-- <pre>
+{{users | json}}
+</pre> -->
+
+<!-- <app-bindingg></app-bindingg> -->
+
+
+<!-- routing -->
+
+
+<nav class="navbar navbar-expand-lg bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">sample routing </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Dropdown
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
